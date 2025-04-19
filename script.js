@@ -1,12 +1,20 @@
-const obj = { a: 1, b: 2 };
-const { a, b } = obj;
-// This creates two variables, a and b,
-// which are equivalent to
-// const a = obj.a;
-// const b = obj.b;
-
-const array = [1, 2, 3, 4, 5];
-const [ zerothEle, firstEle ] = array;
-// This creates zerothEle and firstEle, both of which point
-// to the elements in the 0th and 1st indices of the array
-console.log(firstEle);
+function createUser (name) {
+    const discordName = "@" + name;
+  
+    let reputation = 0;
+    const getReputation = () => reputation;
+    const giveReputation = () => reputation++;
+  
+    return { name, discordName, getReputation, giveReputation };
+  }
+  
+  const josh = createUser("josh");
+  josh.giveReputation();
+  josh.giveReputation();
+  
+  console.log({
+    discordName: josh.discordName,
+    reputation: josh.getReputation()
+  });
+  // logs { discordName: "@josh", reputation: 2 }
+  
