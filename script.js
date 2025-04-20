@@ -1,20 +1,24 @@
-function createUser (name) {
-    const discordName = "@" + name;
+(function chai(){
+    console.log("Db COnnected");
+    // Named IIfe
+})();  // Semicolon Important other wise wont excute next code
+
+((name)=>{
+    console.log(`this is ${name}`);
+    
+})("Zaid");
+
+const calculator = (function () {
+    const add = (a, b) => a + b;
+    const sub = (a, b) => a - b;
+    const mul = (a, b) => a * b;
+    const div = (a, b) => a / b;
+    return { add, sub, mul, div };
+  })();
+  console.log(calculator);
   
-    let reputation = 0;
-    const getReputation = () => reputation;
-    const giveReputation = () => reputation++;
+  console.log(  calculator.add(3,5));
+  console.log(calculator);
   
-    return { name, discordName, getReputation, giveReputation };
-  }
   
-  const josh = createUser("josh");
-  josh.giveReputation();
-  josh.giveReputation();
-  
-  console.log({
-    discordName: josh.discordName,
-    reputation: josh.getReputation()
-  });
-  // logs { discordName: "@josh", reputation: 2 }
   
