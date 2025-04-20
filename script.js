@@ -1,24 +1,17 @@
-(function chai(){
-    console.log("Db COnnected");
-    // Named IIfe
-})();  // Semicolon Important other wise wont excute next code
-
-((name)=>{
-    console.log(`this is ${name}`);
-    
-})("Zaid");
-
-const calculator = (function () {
-    const add = (a, b) => a + b;
-    const sub = (a, b) => a - b;
-    const mul = (a, b) => a * b;
-    const div = (a, b) => a / b;
-    return { add, sub, mul, div };
-  })();
-  console.log(calculator);
+function createUser (name) {
+    const discordName = "@" + name;
   
-  console.log(  calculator.add(3,5));
-  console.log(calculator);
+    let reputation = 0;
+    const getReputation = () => reputation;
+    const giveReputation = () => reputation++;
   
+    return { name, discordName, getReputation, giveReputation };
+  }
+  function createPlayer (name, level) {
+    const user = createUser(name);
+  
+    const increaseLevel = () => level++;
+    return Object.assign({}, user, { increaseLevel });
+  }
   
   
