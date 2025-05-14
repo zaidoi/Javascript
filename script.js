@@ -1,18 +1,16 @@
-class User {
-  constructor(email,password){
-    this.email = email;
-    this.password = password
-  }
-  get password(){
-  return this._password.toUpperCase()
-  }
+let user = {
+  name: "Zaid",
+  surname: "Badgujar",
 
-  set password(val){
-  this._password = val
+  get fullName(){
+    return`${this.name} ${this.surname}`
+  },
+
+  set fullName(val){
+[this.name,this.surname] = val.split(" ")
   }
 }
-const zaid = new User("Zaid","jgh");
 
-console.log(zaid.password);
+user.fullName = "Faizan Gandhi"
 
-
+alert(user.fullName)
