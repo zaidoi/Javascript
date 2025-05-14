@@ -1,17 +1,18 @@
-function createUser (name) {
-    const discordName = "@" + name;
-  
-    let reputation = 0;
-    const getReputation = () => reputation;
-    const giveReputation = () => reputation++;
-  
-    return { name, discordName, getReputation, giveReputation };
+class User {
+  constructor(email,password){
+    this.email = email;
+    this.password = password
   }
-  function createPlayer (name, level) {
-    const user = createUser(name);
-  
-    const increaseLevel = () => level++;
-    return Object.assign({}, user, { increaseLevel });
+  get password(){
+  return this._password.toUpperCase()
   }
-  
-  
+
+  set password(val){
+  this._password = val
+  }
+}
+const zaid = new User("Zaid","jgh");
+
+console.log(zaid.password);
+
+
