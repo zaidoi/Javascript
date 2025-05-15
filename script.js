@@ -1,22 +1,17 @@
 class Animal {
-  constructor(name,type){
-    this.name = name;
-    this.type = type;
+  constructor(name){
+   this.name = Animal.info(name)
   }
-  name(){
-    console.log(`${this.name} Good`);
-    
+
+  walk(){
+    console.log(`Its Running ${this.name}`);
+  }
+
+  static info(name){
+    return name.toUpperCase()
   }
 }
 
+let lion = new Animal("Faizu");
 
-class Monkey extends Animal{
-type(){
-  console.log(`${this.name} good ${this.type}`);
-  
-}
-}
-
-let user = new Animal("Faizu","Janwar")
-
-user.name()
+lion.walk()
