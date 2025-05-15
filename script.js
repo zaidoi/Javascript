@@ -1,16 +1,22 @@
-let user = {
-  name: "Zaid",
-  surname: "Badgujar",
-
-  get fullName(){
-    return`${this.name} ${this.surname}`
-  },
-
-  set fullName(val){
-[this.name,this.surname] = val.split(" ")
+class Animal {
+  constructor(name,type){
+    this.name = name;
+    this.type = type;
+  }
+  name(){
+    console.log(`${this.name} Good`);
+    
   }
 }
 
-user.fullName = "Faizan Gandhi"
 
-alert(user.fullName)
+class Monkey extends Animal{
+type(){
+  console.log(`${this.name} good ${this.type}`);
+  
+}
+}
+
+let user = new Animal("Faizu","Janwar")
+
+user.name()
