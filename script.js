@@ -15,3 +15,5 @@ class Animal {
 let lion = new Animal("Faizu");
 
 lion.walk()
+
+lion.name
